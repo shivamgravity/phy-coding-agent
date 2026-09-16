@@ -1,0 +1,203 @@
+direction: right
+
+# ============================================================
+# MAIN FLOW
+# ============================================================
+
+user: "👤 User" {
+  width: 160
+  height: 75
+
+  style: {
+    fill: "#EDE3FF"
+    stroke: "#D8C8F2"
+    stroke-width: 2
+    border-radius: 18
+    font-size: 20
+    bold: true
+  }
+}
+
+request: "🔍 Request Analysis" {
+  width: 230
+  height: 75
+
+  style: {
+    fill: "#EDE3FF"
+    stroke: "#D8C8F2"
+    stroke-width: 2
+    border-radius: 18
+    font-size: 20
+    bold: true
+  }
+}
+
+repository: "📁 Repository\nUnderstanding" {
+  width: 245
+  height: 85
+
+  style: {
+    fill: "#EDE3FF"
+    stroke: "#D8C8F2"
+    stroke-width: 2
+    border-radius: 18
+    font-size: 20
+    bold: true
+  }
+}
+
+strategy: "🧠 Strategy Generation" {
+  width: 265
+  height: 75
+
+  style: {
+    fill: "#EDE3FF"
+    stroke: "#D8C8F2"
+    stroke-width: 2
+    border-radius: 18
+    font-size: 20
+    bold: true
+  }
+}
+
+approval: "🤝 Human Approval" {
+  width: 230
+  height: 75
+
+  style: {
+    fill: "#F1E9FF"
+    stroke: "#D8C8F2"
+    stroke-width: 2
+    border-radius: 18
+    font-size: 20
+    bold: true
+  }
+}
+
+planning: "📋 Implementation\nPlanning" {
+  width: 250
+  height: 85
+
+  style: {
+    fill: "#EDE3FF"
+    stroke: "#D8C8F2"
+    stroke-width: 2
+    border-radius: 18
+    font-size: 20
+    bold: true
+  }
+}
+
+execution: "⚙️ Execution" {
+  width: 185
+  height: 75
+
+  style: {
+    fill: "#EDE3FF"
+    stroke: "#D8C8F2"
+    stroke-width: 2
+    border-radius: 18
+    font-size: 20
+    bold: true
+  }
+}
+
+verification: "✅ Verification" {
+  width: 205
+  height: 75
+
+  style: {
+    fill: "#EDE3FF"
+    stroke: "#D8C8F2"
+    stroke-width: 2
+    border-radius: 18
+    font-size: 20
+    bold: true
+  }
+}
+
+report: "📊 Results & Report" {
+  width: 230
+  height: 75
+
+  style: {
+    fill: "#EDE3FF"
+    stroke: "#D8C8F2"
+    stroke-width: 2
+    border-radius: 18
+    font-size: 20
+    bold: true
+  }
+}
+
+
+# ============================================================
+# DEBUG / RECOVERY
+# ============================================================
+
+debug: "🐛 Debug / Issue Analysis" {
+  width: 290
+  height: 85
+
+  style: {
+    fill: "#EDE3FF"
+    stroke: "#D8C8F2"
+    stroke-width: 2
+    border-radius: 18
+    font-size: 20
+    bold: true
+  }
+}
+
+context: "Need More Context" {
+  width: 185
+  height: 55
+
+  style: {
+    fill: "#FAF7FF"
+    stroke: "#D8C8F2"
+    stroke-width: 2
+    border-radius: 18
+    font-size: 16
+    bold: true
+  }
+}
+
+solution: "Solution Required" {
+  width: 175
+  height: 55
+
+  style: {
+    fill: "#FAF7FF"
+    stroke: "#D8C8F2"
+    stroke-width: 2
+    border-radius: 18
+    font-size: 16
+    bold: true
+  }
+}
+
+# ============================================================
+# CONNECTIONS
+# ============================================================
+
+user -> request
+request -> repository
+repository -> strategy
+
+strategy -> approval
+
+approval -> strategy: "Revise / Reject"
+approval -> planning: "Approved"
+
+planning -> execution
+execution -> verification
+
+verification -> report: "Success"
+verification -> debug: "Issue Found"
+
+debug -> context: "Need More Context"
+debug -> solution: "Solution Required"
+
+context -> repository
+solution -> strategy
