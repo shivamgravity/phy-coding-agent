@@ -30,21 +30,11 @@ and let the developer decide what happens next.
 
 ## Planned Architecture
 
-User
-  ↓
-Request Analysis
-  ↓
-Repository Understanding
-  ↓
-Strategy Generation
-  ↓
-Human Approval
-  ↓
-Implementation Planning
-  ↓
-Execution
-  ↓
-Verification
+<p align="center">
+  <img src="docs/architecture/system-architecture.svg"
+       alt="Phy Coding Agent Architecture"
+       width="100%">
+</p>
 
 ## Status
 
@@ -52,4 +42,14 @@ Verification
 
 ## License
 
-MIT
+This project is open source and licensed under the [MIT License](LICENSE).
+
+The MIT-licensed code in this repository constitutes the project's open-source core, including its agentic coding capabilities, repository analysis, planning, context management, tool execution, and other functionality provided here.
+
+Any future hosted services, cloud infrastructure, commercial services, or other components developed separately from this repository may be distributed under separate terms and may be proprietary. Such services are not required to use or run the open-source core locally.
+
+The open-source core and any future hosted services are intended to remain separate components with clearly defined interfaces between them.
+
+### Contributions
+
+Contributions to this repository are welcome and will be licensed under the MIT License, subject to the terms of the project's contribution guidelines.
